@@ -1,0 +1,494 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffff3;
+}
+
+/* Header Section */
+header {
+    background-color: #928e8d;
+    color: #fff;
+    position: fixed;
+    border-radius: 15px;
+    width: 90%; 
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+    z-index: 1000; 
+    transition: background-color 0.5s ease; /* Smooth transition for background color change */
+}
+
+header.transparent {
+    background-color: rgba(146, 142, 141, 0.8); /* Make the background slightly transparent */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+header nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+header nav .logo h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 40px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position the underline below the text */
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for underline */
+}
+
+header nav ul li a:hover {
+    color: #d4c8c5; /* Change color on hover */
+    transform: scale(1.1); /* Slightly scale up the text */
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* Expand the underline on hover */
+    left: 0; /* Center the underline */
+}
+
+
+/* Main Section */
+.main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    background-color: #fffff3;
+    color: #444446;
+    height: 100vh; /* Change to 100vh to cover the full screen */
+}
+
+.main-content {
+    flex: 1;
+    max-width: 40%;
+}
+
+.main-content h1 {
+    font-size: 90px;
+    margin-bottom: 50px;
+}
+
+.main-content p {
+    font-size: 35px;
+}
+
+/* Main image filling the right side */
+.main-image {
+    flex: 1;
+    height: 85%; 
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%; 
+}
+
+.main-image img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+}
+
+/* Book Now button positioning */
+.booknow {
+    position: absolute;
+    bottom: 150px; 
+    padding-left: 220px;
+    transform: translateX(-50%);
+}
+
+.booknow .btn {
+    padding: 15px 60px;
+    background-color: #928e8d; /* Base color */
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 10px;
+    position: relative; /* Ensure the button is positioned correctly */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+    display: inline-block; /* Ensure the button takes up only as much space as it needs */
+}
+
+.booknow .btn:hover {
+    background-color: #7b7574; /* Darker shade for better visibility */
+    transform: scale(1.1); /* Enlarge the entire button */
+}
+
+.booknow .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Start large enough to cover the button */
+    height: 300%; /* Start large enough to cover the button */
+    background: rgba(255, 255, 255, 0.4); /* Light overlay effect */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+    transition: transform 0.5s ease; /* Smooth scaling transition */
+    z-index: 0; /* Place behind the button */
+}
+
+.booknow .btn:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Scale up overlay effect */
+    z-index: 1; /* Ensure the ripple is above the button */
+}
+
+.booknow .btn span {
+    position: relative; /* Positioning for the text */
+    z-index: 1; /* Ensure text is above the overlay */
+}
+
+
+
+/* Fun Zone Section */
+.fun-zone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    background-color: #9d9593;
+    color: #fffff3;
+    height: 100vh; /* Change to 100vh to cover the full screen */
+    position: relative;
+}
+
+.fun-zone-content {
+    flex: 1;
+    max-width: 40%;
+}
+
+.fun-zone-content h2 {
+    font-size: 70px; /* Match font size with main h1 */
+    margin-bottom: 50px;
+}
+
+.fun-zone-content p {
+    font-size: 26px; /* Match font size with main paragraph */
+}
+
+.fun-zone-image {
+    flex: 1;
+    height: 85%; /* Make the image fill the full height of the section */
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fun-zone-image img {
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+
+
+/* Barber Section Styles */
+.barbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 250px 20px;
+    background-color: #fffff3; /* Light background color */
+    height: 100vh; /* Full height */
+}
+
+.barbers h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #444446;
+}
+
+.barber-container {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-around; /* Space evenly between items */
+    width: 100%; /* Full width of the section */
+}
+
+.barber {
+    text-align: center;
+    margin: 20px; /* Space between each barber */
+    flex: 1; /* Allow each barber to grow equally */
+    max-width: 200px; /* Fixed maximum width for each barber */
+}
+
+.barber img {
+    width: 200px; /* Width of the images */
+    height: 200px; /* Height of the images */
+    border-radius: 50%; /* Circular shape */
+    border: 3px solid #928e8d; /* Border color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.barber h3 {
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+    color: #444446;
+}
+
+.barber p {
+    font-size: 16px;
+    color: #928e8d; /* Gray color for description */
+}
+
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust height based on content */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.service {
+    position: relative; /* Set relative positioning */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    border-radius: 15px; /* Add rounded corners */
+}
+
+.service img {
+    width: 100%;
+    height: 300px; /* Adjust the height automatically */
+    border-radius: 15px; /* Ensure the image has rounded corners */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.services h2 {
+    color: #444446;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.service h3,
+.service p {
+    position: absolute; /* Position text over the image */
+    bottom: 60px; /* Position from the bottom */
+    left: 10px; /* Position from the left */
+    color: white; /* Change text color for contrast */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for text background */
+}
+
+.service h3 {
+    margin: 0; /* Remove margin */
+    margin-bottom: 30px;
+}
+
+.service p {
+    margin-top: 5px; /* Space between title and paragraph */
+}
+
+/* Button styling */
+.service .btn {
+    position: absolute; /* Position button */
+    bottom: 15px; /* Space from the bottom */
+    left: 20px; /* Space from the left */
+    background-color: transparent; /* Transparent background */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid #928e8d; /* Add border with specified color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+    text-decoration: none;
+}
+
+.service:hover img {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.service .btn:hover {
+    background-color: #7b7574; /* Darker shade on hover */
+    color: #fff; /* Optional: Change text color on hover if needed */
+}
+
+
+
+/* Reviews Section */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px; /* Space around the section */
+    background-color: #9d9593; /* Light background */
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+
+.reviews h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #444446;
+}
+
+.reviews-slider {
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.3s ease; /* Smooth sliding effect */
+}
+
+.review-card {
+    background-color: #fff; /* White background for reviews */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-right: 20px; /* Space between cards */
+    flex: 0 0 33.33%; /* Three cards per slide */
+    max-width: 33.33%; /* Three cards per slide */
+    position: relative;
+}
+
+.review-card strong {
+    display: block; /* Makes the name a block element */
+    margin-bottom: 20px; /* Space between name and comment */
+}
+
+/* Slider Buttons */
+.slider-btn {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    background-color: #d4c8c5;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for buttons */
+}
+
+.slider-btn.prev {
+    left: 10px; /* Position left */
+}
+
+.slider-btn.next {
+    right: 10px; /* Position right */
+}
+
+.slider-btn:hover{
+    background-color: #444446;
+}
+
+
+footer {
+    background-color: #444446; /* Background color for the top half */
+    color: #fffff3; /* Text color */
+    padding: 20px 10%; /* Padding for footer */
+    position: relative; /* Positioning context */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+}
+
+.footer-row {
+    display: flex; /* Row flex display */
+    justify-content: space-between; /* Space columns evenly */
+    padding: 10px 0; /* Padding between rows */
+}
+
+.footer-col {
+    flex: 1; /* Equal width for all columns */
+    margin: 0 10px; /* Margin between columns */
+}
+
+.footer-logo {
+    height: 100px; /* Logo height */
+    margin: 10px 32px;
+    border: 2px solid #fffff3;
+    border-radius: 50px;
+}
+
+.footer-col h2, .footer-col h3 {
+    margin: 0 0 20px; /* Margin for titles */
+}
+
+.footer-col p {
+    margin: 10px 0; /* Margin for paragraphs */
+}
+
+.footer-content a {
+    color:#fffff3
+}
+
+.social-icons {
+    display: flex; /* Flexbox for social icons */
+    flex-direction: column;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+    height: 35px;
+    margin-left: 10px;
+}
+
+.footer-row.copyright { 
+    margin-left: 35%;
+    font-size: 12px; /* Smaller font size */
+    padding: 0; /* Padding for copyright row */
+    margin-top: 30px; /* Space above copyright row */
+}

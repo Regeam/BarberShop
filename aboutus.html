@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>Barber & Chill - About Us</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffff3;
+        }
+
+        header {
+            background-color: #928e8d;
+            color: #fff;
+            position: fixed;
+            border-radius: 15px;
+            width: 90%; 
+            left: 50%;
+            top: 15px;
+            transform: translateX(-50%);
+            z-index: 1000; 
+            transition: background-color 0.5s ease; /* Smooth transition for background color change */
+        }
+        
+        header.transparent {
+            background-color: rgba(146, 142, 141, 0.8); /* Make the background slightly transparent */
+        }
+        
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        header nav .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        header nav .logo img {
+            height: 40px;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        header nav .logo h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+        
+        header nav ul {
+            list-style: none;
+        }
+        
+        header nav ul li {
+            display: inline;
+            margin-left: 40px;
+        }
+        
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+        }
+        
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px; /* Position the underline below the text */
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for underline */
+        }
+        
+        header nav ul li a:hover {
+            color: #d4c8c5; /* Change color on hover */
+            transform: scale(1.1); /* Slightly scale up the text */
+        }
+        
+        header nav ul li a:hover::after {
+            width: 100%; /* Expand the underline on hover */
+            left: 0; /* Center the underline */
+        }
+
+
+        .about-content {
+            text-align: left; /* Left-align text */
+            padding: 50px 20px; /* Add padding for the section */
+            max-width: 1200px; /* Max width for better layout */
+            margin: auto; /* Centering the section */
+        }
+
+        .about-content h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 15px;
+            margin-top: 70px; /* Reduced top margin */
+            color: #444446;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between; /* Space between images */
+            margin-bottom: 20px; /* Space below the images */
+        }
+
+        .image-container img {
+            width: 33.33%; /* Each image takes up one-third of the width */
+            height: 300px; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below images */
+        }
+
+        .text-columns {
+            text-align: left; /* Align text to the left */
+            padding: 20px; /* Optional padding for the text section */
+            column-count: 2; /* Split the content into two columns */
+            column-gap: 50px; /* Space between the columns */
+        }
+
+        .text-columns p {
+            margin-bottom: 20px; /* Space between paragraphs */
+            break-inside: avoid; /* Prevents breaking paragraphs between columns */
+            line-height: 1.2;
+        }
+        .highlight {
+            background-color: #928e8d; /* Light background for emphasis */
+            padding: 10px; /* Padding for highlighted sections */
+            border-radius: 10px; /* Rounded corners */
+            color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #444446; /* Background color for the top half */
+            color: #fffff3; /* Text color */
+            padding: 20px 10%; /* Padding for footer */
+            position: relative; /* Positioning context */
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column; /* Stack rows vertically */
+        }
+        
+        .footer-row {
+            display: flex; /* Row flex display */
+            justify-content: space-between; /* Space columns evenly */
+            padding: 10px 0; /* Padding between rows */
+        }
+        
+        .footer-col {
+            flex: 1; /* Equal width for all columns */
+            margin: 0 10px; /* Margin between columns */
+        }
+        
+        .footer-logo {
+            height: 100px; /* Logo height */
+            margin: 10px 32px;
+            border: 2px solid #fffff3;
+            border-radius: 50px;
+        }
+        
+        .footer-col h2, .footer-col h3 {
+            margin: 0 0 20px; /* Margin for titles */
+        }
+        
+        .footer-col p {
+            margin: 10px 0; /* Margin for paragraphs */
+        }
+        
+        .footer-content a {
+            color:#fffff3
+        }
+        
+        .social-icons {
+            display: flex; /* Flexbox for social icons */
+            flex-direction: column;
+            gap: 15px; /* Space between icons */
+        }
+        
+        .social-icon {
+            height: 35px;
+            margin-left: 10px;
+        }
+        
+        .footer-row.copyright { 
+            margin-left: 35%;
+            font-size: 12px; /* Smaller font size */
+            padding: 0; /* Padding for copyright row */
+            margin-top: 30px; /* Space above copyright row */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="barbernchill.html">
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <h1>Barber & Chill</h1>
+            </div>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="appointment.html">Schedule Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-content">
+        <h2>About Us</h2>
+        <div class="image-container">
+            <img src="img/about1.png" alt="Barber Service 1">
+            <img src="img/about2.png" alt="Barber Service 2">
+            <img src="img/about3.png" alt="Barber Service 3">
+        </div>
+        <div class="text-columns">
+            <p class="highlight"><strong>Welcome to Barber & Chill!</strong></p>
+            <p>At Barber & Chill, we believe that grooming is not just a service; it’s an experience. Our team of skilled barbers is dedicated to providing you with top-notch services in a relaxing and welcoming atmosphere. We understand that every client is unique, and we tailor our services to meet your individual needs, ensuring you leave our salon feeling refreshed and confident.</p>
+            <p class="highlight"><strong>Our Mission</strong></p>
+            <p>Our mission is to create a community hub where people can come to unwind, socialize, and enjoy exceptional grooming services. We strive to elevate your grooming experience by blending traditional barbering techniques with modern styles. Whether you're in for a simple trim or a complete makeover, we’re here to ensure you look and feel your best.<br><br><br></p>
+            <p class="highlight"><strong>Why Choose Us?</strong></p>
+            <p> - <strong>Skilled Professionals:</strong> Our barbers are skilled and passionate. They stay updated with the latest trends to provide the best service.</p>
+            <p> - <strong>Friendly Environment:</strong> We take pride in creating a friendly and inclusive atmosphere where everyone feels welcome.</p>
+            <p> - <strong>Community Focus:</strong> Barber & Chill is a community. We regularly host events to engage with our clients and foster connections.</p>
+            <p class="highlight"><strong>Visit Us Today!</strong></p>
+            <p>Experience the ultimate barber experience where you can relax, refresh, and rejuvenate. We look forward to serving you and becoming your go-to barbershop!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <img src="img/logo.png" alt="Logo" class="footer-logo">
+                    <h2>Barber & Chill</h2>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><a href="mailto:barbernchill@gmail.com">barbernchill@gmail.com</a></p>
+                    <p>09999123456</p>
+                    <p>(77) 123 4567</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Socials</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="img/fb.png" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="img/ig.png" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-row copyright">
+                <p>© Barber & Chill 2024, All Rights Reserved. <a href="privacypolicy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="barbernchill.js"></script>
+</body>
+</html>
